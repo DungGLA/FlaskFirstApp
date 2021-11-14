@@ -13,7 +13,7 @@ from resource.store import Store, StoreList
 app = Flask(__name__)
 
 # app.config['SQLACHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-app.config['SQLACHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
+app.config['SQLAlCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 # To know when an object had changed, but not been saved to the db, the extension flask SQLAchemy was tracking every
 # change that we made to the SQLAchemy session and that took some resources.
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
