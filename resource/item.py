@@ -1,6 +1,6 @@
 import sqlite3
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required
 from model.item import ItemModel
 
 class Item(Resource):
@@ -18,7 +18,6 @@ class Item(Resource):
     @jwt_required()
     def get(self, name):
         item = ItemModel.find_by_name(name)
-        print(type(item))
         if item:
             return item.json()
         return {'message': 'Item not found'}, 404
